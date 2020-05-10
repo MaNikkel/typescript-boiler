@@ -2,12 +2,13 @@
 
 FROM node:12.16-alpine3.11
 
-RUN mkdir -p /app
 WORKDIR /app
 
-COPY . /app
+COPY package.json ./
 
 RUN yarn
+
+COPY . .
 
 EXPOSE 3333
 
